@@ -26,7 +26,7 @@ body {
   background: #fff7c2; 
 
   resize: horizontal;     
-  overflow: auto;        
+  overflow: auto;
   position: relative;
 }
 
@@ -36,18 +36,15 @@ body {
   position: absolute;
   top: 0;
   right: -4px;
-  width: 8px;
   height: 100%;
   background: #f2f2f2;
   border-left: 1px solid #ddd;
-  border-right: 1px solid #ddd;
   cursor: col-resize;
 }
 
 /* RIGHT */
 .san{
   flex: 1;
-  min-width: 240px;
 }
 
 /* Phone (rows)*/
@@ -60,12 +57,17 @@ body {
 
   .dayna{
     width: auto;
-    min-width: 0;
+    min-height: 200px;
     max-width: none;
-    resize: none;
+    background-color: aqua;
+    resize: vertical;
   }
 
   .dayna::after{
     display: none;
+  }
+
+  .san{
+    background-color: bisque;
   }
 }
