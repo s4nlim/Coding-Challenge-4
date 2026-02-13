@@ -22,6 +22,7 @@ body {
   width: 50%;              
   min-width: 240px;
   max-width: calc(100% - 240px); 
+  background: #fff7c2; 
 
   resize: horizontal;     
   overflow: auto;        
