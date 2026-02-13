@@ -29,26 +29,30 @@
   </main>
 
 <script>
-    const EMOJIS = ["🐒","🙊","🙉","🐵","🍌"];
+  // Emoji rain every 10 seconds (🐒🙊🙉🐵🍌)
+  const EMOJIS = ["🐒","🙊","🙉","🐵","🍌"];
 
-    function rainBurst() {
-      for (let i = 0; i < 18; i++) {
-        const s = document.createElement("span");
-        s.className = "emoji";
-        s.textContent = EMOJIS[(Math.random() * EMOJIS.length) | 0];
-        s.style.left = (Math.random() * 100) + "vw";
-        s.style.fontSize = (18 + Math.random() * 22) + "px";
-        s.style.animationDuration = (3 + Math.random() * 3) + "s";
-        s.style.animationDelay = (Math.random() * 0.6) + "s";
-        s.style.setProperty("--drift", (Math.random() * 80 - 40) + "px");
-        document.body.appendChild(s);
-        s.addEventListener("animationend", () => s.remove());
-      }
+  function rainBurst() {
+    for (let i = 0; i < 18; i++) {
+      const e = document.createElement("span");
+      e.className = "emoji";
+      e.textContent = EMOJIS[(Math.random() * EMOJIS.length) | 0];
+
+      e.style.left = (Math.random() * 100) + "vw";
+      e.style.fontSize = (18 + Math.random() * 22) + "px";
+      e.style.animationDuration = (3 + Math.random() * 3) + "s";
+      e.style.animationDelay = (Math.random() * 0.6) + "s";
+      e.style.setProperty("--drift", (Math.random() * 80 - 40) + "px");
+
+      document.body.appendChild(e);
+      e.addEventListener("animationend", () => e.remove());
     }
+  }
 
-    rainBurst();
-    setInterval(rainBurst, 10000);
+  rainBurst();
+  setInterval(rainBurst, 10000);
 </script>
+
 
 </body>
 </html>

@@ -72,14 +72,18 @@ body {
   }
 }
 
-/* emoji rain */
+/* Emoji rain styles */
 .emoji{
   position: fixed;
   top: -2rem;
   z-index: 9999;
   pointer-events: none;
-  animation-name: fall;
-  animation-timing-function: linear;
-  animation-fill-mode: forwards;
+  animation: fall linear forwards;
 }
 
+@keyframes fall{
+  to{
+    transform: translate(var(--drift), 110vh) rotate(360deg);
+    opacity: 0.95;
+  }
+}
