@@ -6,6 +6,7 @@ body {
   font-family: "SN pro";
   cursor: url('cursor.png'), auto;
 }
+
 .split{
   height: 100vh;
   display: flex;
