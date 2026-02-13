@@ -69,3 +69,15 @@ body {
     display: none;
   }
 }
+
+/* emoji rain */
+.emoji{
+  position: fixed;
+  top: -2rem;
+  z-index: 9999;
+  pointer-events: none;
+  animation-name: fall;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+
