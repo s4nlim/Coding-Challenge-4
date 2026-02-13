@@ -5,32 +5,46 @@ body { margin: 0; font: 16px/1.4 system-ui, sans-serif; }
 .split{
   height: 100vh;
   display: flex;
-  gap: 0px;
 }
 
 .column{
   overflow: auto;
   padding: 16px;
-  border-right: 1px solid #ddd;
 }
 
+/* LEFT */
 .dayna{
-  flex: 0 0 50%;
+  flex: none;              
+  width: 50%;              
   min-width: 240px;
+  max-width: calc(100% - 240px); 
 
-  resize: horizontal;     /* draggable */
-  overflow: auto;
-
-  border-right: 6px solid #f2f2f2;
+  resize: horizontal;     
+  overflow: auto;        
+  position: relative;
 }
 
+/* divider */
+.dayna::after{
+  content: "";
+  position: absolute;
+  top: 0;
+  right: -4px;
+  width: 8px;
+  height: 100%;
+  background: #f2f2f2;
+  border-left: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+  cursor: col-resize;
+}
+
+/* RIGHT */
 .san{
-  flex: 1 1 auto;
+  flex: 1;
   min-width: 240px;
-  border-right: none;
 }
 
-
+/* Phone (rows)*/
 @media (max-width: 768px){
   .split{
     flex-direction: column;
@@ -38,22 +52,14 @@ body { margin: 0; font: 16px/1.4 system-ui, sans-serif; }
     min-height: 100vh;
   }
 
-  .column{
-    border-right: none;
-    border-bottom: 1px solid #ddd;
-  }
-
   .dayna{
-    flex: 0 0 auto;
     width: auto;
     min-width: 0;
-    resize: none;         
-    border-bottom: 6px solid #f2f2f2;
-    border-right: none;
+    max-width: none;
+    resize: none;
   }
 
-  .san{
-    min-width: 0;
-    border-bottom: none;
+  .dayna::after{
+    display: none;
   }
 }
